@@ -1,0 +1,515 @@
+/* --- Global Styles & Branding --- */
+:root {
+    --citec-yellow: #FFD700;
+    --dark-bg: #111827; /* Dark blue-black from screenshot */
+    --footer-bg: #000000; /* Pure black from screenshot */
+    --page-bg: #F9F9F7;  /* Light beige from screenshot */
+    --card-bg: #FFFFFF;
+    --text-dark: #1f2937;
+    --text-light: #d1d5db; /* Light grey text */
+    --border-color: #e5e7eb;
+    --border-radius: 8px;
+    --light-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--page-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* --- Reusable Yellow Button --- */
+.btn-yellow {
+    background-color: var(--citec-yellow);
+    color: var(--text-dark);
+    border: none;
+    border-radius: 20px;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-yellow:hover {
+    background-color: #e6c300;
+}
+
+/* --- New Header --- */
+header {
+    background-color: var(--dark-bg);
+    color: var(--card-bg);
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #374151;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-logo {
+    height: 60px;
+    width: 60px;
+    border-radius: var(--border-radius);
+}
+
+.logo-text h1 {
+    font-size: 1.25rem;
+    margin: 0;
+    font-weight: 600;
+}
+
+.logo-text p {
+    font-size: 0.85rem;
+    margin: 0;
+    color: var(--text-light);
+}
+
+/* --- Main Content --- */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* --- New Welcome Hub --- */
+.welcome-hub {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+}
+
+.welcome-hub h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.welcome-hub p {
+    font-size: 1.1rem;
+    color: #4b5563;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- New About Section --- */
+.about-section {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--light-shadow);
+    margin-bottom: 2rem;
+}
+
+.about-section h2 {
+    color: var(--text-dark);
+    border-bottom: 3px solid var(--citec-yellow);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.about-section p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4b5563;
+    margin-bottom: 1rem;
+}
+
+.about-section p:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Tab Navigation --- */
+.tab-nav {
+    display: flex;
+    background-color: #e5e7eb;
+    border-radius: var(--border-radius);
+    margin-bottom: 1.5rem;
+    padding: 0.5rem;
+}
+
+.tab-nav-item {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #374151;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tab-nav-item:hover {
+    background-color: #d1d5db;
+}
+
+.tab-nav-item.active {
+    background-color: var(--card-bg);
+    color: var(--text-dark);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* --- Tab Content --- */
+.tab-pane {
+    display: none; /* Hidden by default */
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--light-shadow);
+    border: 1px solid var(--border-color);
+    animation: fadeIn 0.5s ease;
+}
+
+.tab-pane.active {
+    display: block; /* Shown when active */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Content Styling --- */
+.tab-pane h2 {
+    color: var(--text-dark);
+    border-bottom: 3px solid var(--citec-yellow);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tab-pane h3 {
+    color: var(--text-dark);
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+ul, ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+hr.section-divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--border-color);
+    margin: 2.5rem 0;
+}
+
+/* --- Tables --- */
+.table-container {
+    overflow-x: auto; /* Makes table scrollable on small screens */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1.5rem;
+}
+
+table th, table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+table th {
+    background-color: var(--dark-bg);
+    color: var(--card-bg);
+    font-size: 0.9rem;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+table td strong {
+    color: var(--text-dark);
+    font-size: 1.1em;
+}
+
+/* --- Curriculum Table Styles --- */
+.tab-pane table {
+    margin-bottom: 2.5rem; /* Adds space between semester tables */
+}
+
+.tab-pane table th, 
+.tab-pane table td {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+}
+
+tr.semester-header th {
+    background-color: #374151; /* Dark grey */
+    color: var(--card-bg);
+    font-size: 1.1rem;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+table thead tr:last-child th {
+    background-color: var(--dark-bg);
+}
+
+tr.total-row td {
+    background-color: #f3f4f6;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+/* --- Grading Scale & Notes --- */
+.grading-scale {
+    list-style-type: none;
+    padding-left: 0;
+}
+.grading-scale li {
+    padding: 0.25rem 0;
+}
+.important-note {
+    background-color: #fffbeb;
+    border-left: 5px solid var(--citec-yellow);
+    padding: 1rem 1.5rem;
+    margin-top: 1.5rem;
+    border-radius: 4px;
+}
+
+/* --- New CTA Section --- */
+.cta-section {
+    background-color: var(--dark-bg);
+    color: var(--card-bg);
+    text-align: center;
+    padding: 3rem 2rem;
+    border-radius: var(--border-radius);
+    margin-top: 2.5rem;
+}
+
+.cta-section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.cta-section p {
+    font-size: 1rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto 1.5rem auto;
+}
+
+/* --- New Footer --- */
+footer {
+    text-align: center;
+    padding: 2.5rem 1rem;
+    background-color: var(--footer-bg);
+    color: var(--text-light);
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+.footer-seal {
+    height: 80px;
+    width: 80px;
+    margin-bottom: 1rem;
+}
+
+footer p {
+    margin: 0.25rem 0;
+}
+
+footer .copyright {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+
+/* --- Chat Interface --- */
+#chat-bubble {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--citec-yellow);
+    color: var(--text-dark);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 1001;
+}
+
+#chat-window {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 320px;
+    height: 450px;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    z-index: 1002;
+}
+
+#chat-header {
+    background: var(--dark-bg);
+    color: var(--citec-yellow);
+    padding: 0.75rem 1rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#close-chat {
+    color: var(--card-bg);
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+#chat-messages {
+    flex-grow: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    background: #f9fafb;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.message {
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    max-width: 80%;
+    word-wrap: break-word;
+    line-height: 1.4;
+}
+
+.bot-message {
+    background-color: #e5e7eb;
+    color: var(--text-dark);
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+}
+
+.user-message {
+    background-color: var(--citec-yellow);
+    color: var(--text-dark);
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+
+#chat-input {
+    display: flex;
+    border-top: 1px solid var(--border-color);
+}
+
+#user-input {
+    flex-grow: 1;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+#user-input:focus {
+    outline: none;
+}
+
+#send-button {
+    background: var(--citec-yellow);
+    color: var(--text-dark);
+    border: none;
+    padding: 0 1.25rem;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* --- Mobile-Friendly Layout --- */
+@media (max-width: 900px) {
+    /* Removed hero-card styles */
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 1rem;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .btn-yellow {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    main {
+        margin: 1rem auto;
+        padding: 0 0.5rem;
+    }
+    
+    .welcome-hub h2 {
+        font-size: 1.75rem;
+    }
+    .welcome-hub p {
+        font-size: 1rem;
+    }
+    
+    .about-section {
+        padding: 1.5rem;
+    }
+
+    .tab-nav {
+        flex-direction: column;
+    }
+    
+    .tab-pane {
+        padding: 1rem;
+    }
+    
+    #chat-window {
+        width: 90%;
+        height: 70%;
+        bottom: 10px;
+        right: 5%;
+    }
+    
+    #chat-bubble {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+}
